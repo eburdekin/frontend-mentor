@@ -8,35 +8,89 @@
     src: url('./assets/fonts/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
 }
 
-body {
-    font-family: "WorkSans";
-    display: flex;
-    flex-direction: column;
+* {
+    box-sizing: border-box;
 }
 
-header * {
-    display: inline;
+body {
+    font-family: "WorkSans";
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-image: url('./assets/images/background-pattern-mobile.svg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw auto;
+    background-color: hsl(275, 100%, 97%);
+
+    @media screen and (min-width: 400px) {
+        background-image: url('./assets/images/background-pattern-desktop.svg');
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: auto;
+        background-color: hsl(275, 100%, 97%);
+    }
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 550px;
+    min-height: 400px;
+    border: 1px solid hsl(275, 100%, 97%);
+    border-radius: 15px;
+    padding: 10px 10px 10px 10px;
+    background-color: white;
+
+    @media screen and (min-width: 500px) {
+
+        padding: 10px 40px 40px 40px;
+    }
+}
+
+header {
+    display: flex;
+}
+
+header h1 {
     color: hsl(292, 42%, 14%);
-    font-size: 36px;
+
+    @media screen and (min-width: 500px) {
+        font-size: 52px;
+    }
+}
+
+header img {
+    margin-right: 20px;
+}
+
+.faq-questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .faq-question {
     color: hsl(292, 42%, 14%);
-    font-size: 16px;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.faq-question:hover {
+    color: hsl(292, 100%, 41%);
+    cursor: pointer;
 }
 
 .faq-answer {
     display: none;
     color: hsl(292, 16%, 49%);
-    font-size: 16px;
-}
-
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
+    line-height: 22px;
 }
